@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap");
+
+hr{
+  margin: auto -4rem 1.5rem;
+  color:whitesmoke;
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(95, 86, 86, 0.5);
+
+  overflow:hidden;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+.modal .modalContent{
+  width: 100%;
+  margin: 30%;
+  background-color: white;
+  text-align: left;
+  padding: 0 5% 2rem;
+}
+
+select:invalid{
+  color: grey;
+}
+
+.modalContent input[type=text], .example{
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size:0.6rem;
+  background-color: whitesmoke;
+  border: 0;
+}
+
+.error-msg-div{
+  margin: auto;
+  font-size:80%;
+  color:red;
+  display:inline-block;
+}
+
+
+.modalContent select{
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size:0.6rem;
+  text-decoration-color:whitesmoke;
+  background-color: whitesmoke;
+  border: 0;
+}
+
+.buttonContainer{
+  margin-top: 1rem;
+  float : right;
+}
+
+.fieldTitle{
+  margin-bottom:0.3rem;
+}
+
+
+button{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+
+  display:inline-block;
+}
+
+.addBookHeader{
+  position:relative;
+  justify-content: center;
+  display:flex;
+}
+
+.close-button{
+  margin-top: 1rem;
+  position: absolute;
+  right: 0;
+}
+
+@media  only screen and (max-width: 1120px){
+  .modal .modalContent{
+    width: 100%;
+    margin: 15%;
+    background-color: white;
+    text-align: left;
+    padding: 0 5% 2rem;
+  }
+
+}
+
+@media only screen and (max-width: 850px){
+  .modal .modalContent{
+    width: 100%;
+    margin: 5%;
+    background-color: white;
+    text-align: left;
+    padding: 0 5% 2rem;
+  }
+}

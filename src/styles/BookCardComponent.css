@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.card-div {
+  margin: 2% 25%;
+  padding: 2% 2% 2%;
+  min-height: 12rem;
+  letter-spacing: 0.05em;
+  
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  overflow: auto;
+}
+
+.book-cover, .title {
+  max-width: 24.9rem;
+}
+
+.card-div .book-cover {
+  height: 12rem;
+  float: right;
+}
+
+.card-div .title {
+  font-size: 1.75rem;
+  margin: auto 0 2%;
+  display: block;
+}
+
+.card-div .author {
+  margin: -2% 0 2%;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}

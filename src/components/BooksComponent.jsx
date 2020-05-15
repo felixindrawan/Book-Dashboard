@@ -5,8 +5,8 @@ import AddBookModal from "./AddBookModalComponent";
 import "../styles/BookComponent.css";
 
 function BookData() {
-  const idCounter = 1000;
   const [modalVisible, setModalVisible] = useState(false);
+  var bookIdCounter = 0;
 
   function openModal() {
     setModalVisible(true);
@@ -31,9 +31,10 @@ function BookData() {
   };
 
   function getEachBook(book) {
+    bookIdCounter += 1;
     return (
       <BookCard
-        key={book.id}
+        key={bookIdCounter}
         title={book.title}
         author={book.author}
         isbn={book.isbn}
@@ -46,7 +47,6 @@ function BookData() {
   }
 
   function addBook(newBook) {
-    idCounter = idCounter + 1;
     setBooks((prevBooks) => {
       return [...prevBooks, newBook];
     });

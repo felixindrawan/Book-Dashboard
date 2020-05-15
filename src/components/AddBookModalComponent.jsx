@@ -4,6 +4,7 @@ import Header from "./HeaderComponent";
 import "../styles/AddBookModalComponent.css";
 
 function AddBookModal(props) {
+
   const [books, setBooks] = useState({
     title: "",
     author: "",
@@ -131,7 +132,7 @@ function AddBookModal(props) {
                 onChange={handleChange}
                 value={books.pubCountry}
               >
-                <option value="" className="example" disabled selected hidden>
+                <option value="" className="example" disabled defaultValue hidden>
                   eg. Fleishman is in Trouble: A Novel
                 </option>
                 <option value="U.S.">U.S.</option>
@@ -141,11 +142,11 @@ function AddBookModal(props) {
                 <h6 className="error-msg">{errorMsg}</h6>
               </div>
 
-              <container class="buttonContainer">
+              <div className="buttonContainer">
                 <button className="button-red" onClick={submitBook}>
                   Submit
                 </button>
-              </container>
+              </div>
             </div>
           </form>
         </div>

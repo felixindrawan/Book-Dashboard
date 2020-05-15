@@ -4,7 +4,7 @@ import AddBookModal from "./AddBookModalComponent";
 
 import "../styles/BookComponent.css";
 
-function BookData({ match }) {
+function BookData() {
   const [modalVisible, setModalVisible] = useState(false);
 
   function openModal() {
@@ -13,7 +13,6 @@ function BookData({ match }) {
 
   useEffect(() => {
     fetchItem();
-    console.log({ match });
   }, []);
 
   const [books, setBooks] = useState([]);
@@ -32,18 +31,16 @@ function BookData({ match }) {
 
   function getEachBook(book) {
     return (
-      <div>
-        <BookCard
-          key={book.id}
-          title={book.title}
-          author={book.author}
-          isbn={book.isbn}
-          numPages={book.pageNum}
-          pubDate={book.pubDate}
-          pubCountry={book.pubCountry}
-          imgSrc='https://lorempixel.com/400/400/' //{book.imageUrl}
-        />
-      </div>
+      <BookCard
+        key={book.id}
+        title={book.title}
+        author={book.author}
+        isbn={book.isbn}
+        numPages={book.pageNum}
+        pubDate={book.pubDate}
+        pubCountry={book.pubCountry}
+        imgSrc="https://lorempixel.com/400/400/" //{book.imageUrl}
+      />
     );
   }
 
@@ -55,16 +52,20 @@ function BookData({ match }) {
 
   return (
     <div>
-      <AddBookModal onAdd={addBook} visibleOrNot={modalVisible} onClose={() => setModalVisible(false)}/>
+      <AddBookModal
+        onAdd={addBook}
+        visibleOrNot={modalVisible}
+        onClose={() => setModalVisible(false)}
+      />
 
       <div className="BooksTotalAndButton">
         <h5 className="totalBooks">Books ({books.length})</h5>
 
-        <container className="addButton">
-          <button class="button-red" onClick={openModal}>
+        <div className="addButton">
+          <button className="button-red" onClick={openModal}>
             Add +
           </button>
-        </container>
+        </div>
       </div>
       {books.map(getEachBook)}
     </div>

@@ -4,13 +4,15 @@ import '../styles/BookDetailsComponent.css'
 function BookDetails(props){
   function createSection(secTitle, secInfo){
     return(
-      <table border="0" cellpadding="0" cellspacing="0" className="section">
-        <tr >
-          <h5 className="section-title">{secTitle}</h5>
+      <table border="0" cellPadding="0" cellSpacing="0" className="section">
+        <tbody>
+        <tr>
+          <td><h5 className="section-title">{secTitle}</h5></td>
         </tr>
         <tr className="info">
-          <h5 className="overflow-ellipsis">{secInfo}</h5>
+          <td><h5 className="overflow-ellipsis">{secInfo}</h5></td>
         </tr>
+        </tbody>
       </table>
     );
   }
@@ -26,7 +28,8 @@ function BookDetails(props){
   const pubCountry = props.pubCountry;
 
   return(
-    <table border="0" cellpadding="0" cellspacing="0">
+    <table border="0" cellPadding="0" cellSpacing="0">
+      <tbody>
       <tr>
         <td className="tableData">
           {/* ISBN */}
@@ -47,6 +50,7 @@ function BookDetails(props){
           {createSection("Country Publisher", pubCountry )}
         </td>
       </tr>
+      </tbody>
     </table>
   );
 }

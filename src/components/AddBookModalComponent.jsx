@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "./HeaderComponent";
+import GetCountries from "./GetCountries.js";
 
 import "../styles/AddBookModalComponent.css";
 
@@ -19,10 +20,7 @@ function AddBookModal(props) {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    console.log(books.title);
-
     setBooks((prevBooks) => {
-      console.log(prevBooks);
       return {
         ...prevBooks,
         [name]: value,
@@ -64,6 +62,8 @@ function AddBookModal(props) {
     event.preventDefault();
     props.onClose();
   }
+
+  const countries = GetCountries();
 
   if (props.visibleOrNot) {
     return (
@@ -135,7 +135,7 @@ function AddBookModal(props) {
                 <option value="" className="example" disabled defaultValue hidden>
                   eg. Fleishman is in Trouble: A Novel
                 </option>
-                <option value="U.S.">U.S.</option>
+                {countries.map(eachCountry => <option key={eachCountry.id} value={eachCountry.name}>{eachCountry.name}</option>)}
               </select>
 
               <div className="error-msg-div">

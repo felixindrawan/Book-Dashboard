@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./HeaderComponent";
-import GetCountries from "./GetCountries.js";
 
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCountries } from "../actions/countries_action";
 import "../styles/AddBookModalComponent.css";
 
 function AddBookModal(props) {
-
   const [books, setBooks] = useState({
     title: "",
     author: "",
@@ -63,8 +63,22 @@ function AddBookModal(props) {
     props.onClose();
   }
 
-  const countries = GetCountries();
+  // -------------------------*****-------------------------
+  // Fetching Countries
+  const [countriesList, setCountriesList] = useState([]);
+  const countries = useSelector((state) => state.countries);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchCountries(countries));
+  }, []);
+
+  useEffect(() => {
+    setCountriesList(countries.countries.data);
+  });
+
+  // -------------------------*****-------------------------
+  //Return  
   if (props.visibleOrNot) {
     return (
       <div className="modal">
@@ -132,10 +146,21 @@ function AddBookModal(props) {
                 onChange={handleChange}
                 value={books.pubCountry}
               >
-                <option value="" className="example" disabled defaultValue hidden>
+                <option
+                  value=""
+                  className="example"
+                  disabled
+                  defaultValue
+                  hidden
+                >
                   eg. Fleishman is in Trouble: A Novel
                 </option>
-                {countries.map(eachCountry => <option key={eachCountry.id} value={eachCountry.name}>{eachCountry.name}</option>)}
+
+                {countriesList.map((eachCountry) => (
+                  <option key={eachCountry.id} value={eachCountry.name}>
+                    {eachCountry.name}
+                  </option>
+                ))}
               </select>
 
               <div className="error-msg-div">

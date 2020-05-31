@@ -12,6 +12,7 @@ function BookData() {
     setModalVisible(true);
   }
 
+  // -------------------------*****-------------------------
   useEffect(() => {
     fetchItem();
   }, []);
@@ -27,7 +28,8 @@ function BookData() {
 
     setBooks(booksData);
   };
-
+  // -------------------------*****-------------------------
+  // Get book
   function getEachBook(book) {
     bookIdCounter += 1;
     return (
@@ -53,7 +55,9 @@ function BookData() {
     var min = new Date().getMinutes(); //To get the Current Minutes
     var sec = new Date().getSeconds(); //To get the Current Seconds
 
-    return date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
+    return (
+      date + "/" + month + "/" + year + " " + hours + ":" + min + ":" + sec
+    );
   }
 
   function addBook(newBook) {
@@ -94,7 +98,7 @@ function BookData() {
       />
 
       <div className="BooksTotalAndButton">
-        <h5 className="totalBooks">Books ({books.length})</h5>
+        <h5 className="totalBooks">Books ({ books.length })</h5>
 
         <div className="addButton">
           <button className="button-red" onClick={openModal}>

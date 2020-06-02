@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./HeaderComponent";
-import GetCountries from "./GetCountries.js";
 
 import "../styles/AddBookModalComponent.css";
 
 function AddBookModal(props) {
-
   const [books, setBooks] = useState({
     title: "",
     author: "",
@@ -17,6 +15,7 @@ function AddBookModal(props) {
 
   const [errorMsg, setErrorMsg] = useState("");
 
+  // -------------------------*****-------------------------
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -28,6 +27,7 @@ function AddBookModal(props) {
     });
   }
 
+  // -------------------------*****-------------------------
   function submitBook(event) {
     setErrorMsg("");
 
@@ -53,18 +53,30 @@ function AddBookModal(props) {
         pubCountry: "",
       });
       event.preventDefault();
+      window.location.reload();
       props.onClose();
     }
   }
 
+  // -------------------------*****-------------------------
   function closeModal(event) {
     setErrorMsg("");
     event.preventDefault();
     props.onClose();
   }
 
-  const countries = GetCountries();
+  // -------------------------*****-------------------------
+  // Fetching Countries
+  const [countriesList, setCountriesList] = useState([]);
 
+  useEffect(() => {
+    if (props.countryData.length !== 0) {
+      setCountriesList(props.countryData[0].data);
+    }
+  });
+
+  // -------------------------*****-------------------------
+  //Return
   if (props.visibleOrNot) {
     return (
       <div className="modal">
@@ -132,10 +144,21 @@ function AddBookModal(props) {
                 onChange={handleChange}
                 value={books.pubCountry}
               >
-                <option value="" className="example" disabled defaultValue hidden>
+                <option
+                  value=""
+                  className="example"
+                  disabled
+                  defaultValue
+                  hidden
+                >
                   eg. Fleishman is in Trouble: A Novel
                 </option>
-                {countries.map(eachCountry => <option key={eachCountry.id} value={eachCountry.name}>{eachCountry.name}</option>)}
+
+                {countriesList.map((eachCountry) => (
+                  <option key={eachCountry.id} value={eachCountry.name}>
+                    {eachCountry.name}
+                  </option>
+                ))}
               </select>
 
               <div className="error-msg-div">

@@ -9,13 +9,14 @@
   padding: 2% 2% 2%;
   min-height: 12rem;
   letter-spacing: 0.05em;
-  
+
   background-color: white;
   font-family: "Roboto", sans-serif;
   overflow: auto;
 }
 
-.book-cover, .title {
+.book-cover,
+.title {
   max-width: 24.9rem;
 }
 

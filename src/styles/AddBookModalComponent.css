@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap");
 
-hr{
+hr {
   margin: auto -4rem 1.5rem;
-  color:whitesmoke;
+  color: whitesmoke;
 }
 
-.modal{
+.modal {
   position: fixed;
   top: 0;
   height: 100%;
@@ -15,12 +15,12 @@ hr{
   align-items: center;
   background-color: rgba(95, 86, 86, 0.5);
 
-  overflow:hidden;
+  overflow: hidden;
 
   font-family: "Montserrat", sans-serif;
 }
 
-.modal .modalContent{
+.modal .modalContent {
   width: 100%;
   margin: 30%;
   background-color: white;
@@ -28,83 +28,81 @@ hr{
   padding: 0 5% 2rem;
 }
 
-select:invalid{
+select:invalid {
   color: grey;
 }
 
-.modalContent input[type=text], .example{
+.modalContent input[type="text"],
+.example {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  font-size:0.6rem;
+  font-size: 0.6rem;
   background-color: whitesmoke;
   border: 0;
 }
 
-.error-msg-div{
+.error-msg-div {
   margin: auto;
-  font-size:80%;
-  color:red;
-  display:inline-block;
+  font-size: 80%;
+  color: red;
+  display: inline-block;
 }
 
-
-.modalContent select{
+.modalContent select {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  font-size:0.6rem;
-  text-decoration-color:whitesmoke;
+  font-size: 0.6rem;
+  text-decoration-color: whitesmoke;
   background-color: whitesmoke;
   border: 0;
 }
 
-.buttonContainer{
+.buttonContainer {
   margin-top: 1rem;
-  float : right;
+  float: right;
 }
 
-.fieldTitle{
-  margin-bottom:0.3rem;
+.fieldTitle {
+  margin-bottom: 0.3rem;
 }
 
-
-button{
+button {
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
 
-  display:inline-block;
+  display: inline-block;
 }
 
-.addBookHeader{
-  position:relative;
+.addBookHeader {
+  position: relative;
   justify-content: center;
-  display:flex;
+  display: flex;
 }
 
-.close-button{
+.close-button {
   margin-top: 1rem;
   position: absolute;
   right: 0;
 }
 
-@media  only screen and (max-width: 1120px){
-  .modal .modalContent{
+@media only screen and (max-width: 1120px) {
+  .modal .modalContent {
     width: 100%;
     margin: 15%;
     background-color: white;
     text-align: left;
     padding: 0 5% 2rem;
   }
-
 }
 
-@media only screen and (max-width: 850px){
-  .modal .modalContent{
+@media only screen and (max-width: 850px) {
+  .modal .modalContent {
     width: 100%;
     margin: 5%;
     background-color: white;

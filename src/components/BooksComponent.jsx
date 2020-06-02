@@ -4,7 +4,7 @@ import AddBookModal from "./AddBookModalComponent";
 
 import "../styles/BookComponent.css";
 
-function BookData() {
+function BookData(props) {
   const [modalVisible, setModalVisible] = useState(false);
   var bookIdCounter = 0;
 
@@ -12,22 +12,17 @@ function BookData() {
     setModalVisible(true);
   }
 
+  // -------------------------*****-------------------------
+  // Fetching Books
+  const [booksList, setBooksList] = useState([]);
   useEffect(() => {
-    fetchItem();
-  }, []);
+    if (props.data.length !== 0) {
+      setBooksList(props.data[1].data);
+    }
+  });
 
-  const [books, setBooks] = useState([]);
-
-  const fetchItem = async () => {
-    const data = await fetch(
-      `https://5de759a9b1ad690014a4e21e.mockapi.io/api/v1/books`
-    );
-
-    const booksData = await data.json();
-
-    setBooks(booksData);
-  };
-
+  // -------------------------*****-------------------------
+  // Get book
   function getEachBook(book) {
     bookIdCounter += 1;
     return (
@@ -44,6 +39,7 @@ function BookData() {
     );
   }
 
+  // -------------------------*****-------------------------
   //POST
   function getCurrentTime() {
     var date = new Date().getDate(); //To get the Current Date
@@ -53,7 +49,9 @@ function BookData() {
     var min = new Date().getMinutes(); //To get the Current Minutes
     var sec = new Date().getSeconds(); //To get the Current Seconds
 
-    return date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
+    return (
+      date + "/" + month + "/" + year + " " + hours + ":" + min + ":" + sec
+    );
   }
 
   function addBook(newBook) {
@@ -80,21 +78,23 @@ function BookData() {
       requestOptions
     ).then((response) => response.json());
 
-    setBooks((prevBooks) => {
+    setBooksList((prevBooks) => {
       return [...prevBooks, newBook];
     });
   }
 
+  // -------------------------*****-------------------------
   return (
     <div>
       <AddBookModal
         onAdd={addBook}
         visibleOrNot={modalVisible}
         onClose={() => setModalVisible(false)}
+        countryData={props.data}
       />
 
       <div className="BooksTotalAndButton">
-        <h5 className="totalBooks">Books ({books.length})</h5>
+        <h5 className="totalBooks">Books ({booksList.length})</h5>
 
         <div className="addButton">
           <button className="button-red" onClick={openModal}>
@@ -102,7 +102,7 @@ function BookData() {
           </button>
         </div>
       </div>
-      {books.map(getEachBook)}
+      {booksList.map(getEachBook)}
     </div>
   );
 }

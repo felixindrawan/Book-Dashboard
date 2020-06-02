@@ -3,12 +3,9 @@ import React, { useState, useEffect } from "react";
 import Header from "./HeaderComponent";
 import BooksData from "./BooksComponent";
 
-<<<<<<< HEAD
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData } from "../actions/every_action";
 
-=======
->>>>>>> 4ef112532783233cffdae3089a813c5907d30f37
 function MainComponent() {
 
   // -------------------------*****-------------------------

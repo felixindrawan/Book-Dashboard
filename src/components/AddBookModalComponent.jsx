@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./HeaderComponent";
 
-import { useSelector, useDispatch } from "react-redux";
-import { fetchCountries } from "../actions/countries_action";
 import "../styles/AddBookModalComponent.css";
 
 function AddBookModal(props) {
@@ -70,7 +68,6 @@ function AddBookModal(props) {
   // -------------------------*****-------------------------
   // Fetching Countries
   const [countriesList, setCountriesList] = useState([]);
-<<<<<<< HEAD
 
   useEffect(() => {
     if (props.countryData.length !== 0) {
@@ -80,21 +77,6 @@ function AddBookModal(props) {
 
   // -------------------------*****-------------------------
   //Return
-=======
-  const countries = useSelector((state) => state.countries);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCountries(countries));
-  }, []);
-
-  useEffect(() => {
-    setCountriesList(countries.countries.data);
-  });
-
-  // -------------------------*****-------------------------
-  //Return  
->>>>>>> 4ef112532783233cffdae3089a813c5907d30f37
   if (props.visibleOrNot) {
     return (
       <div className="modal">

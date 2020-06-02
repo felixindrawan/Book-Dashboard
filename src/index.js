@@ -9,8 +9,6 @@ import { Provider } from 'react-redux';
 
 const store = configureStore();
 
-//store.dispatch(fetchCountries('reactjs')).then(() => console.log(store.getState()));
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>

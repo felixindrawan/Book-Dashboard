@@ -13,7 +13,6 @@ function BookData(props) {
   }
 
   // -------------------------*****-------------------------
-<<<<<<< HEAD
   // Fetching Books
   const [booksList, setBooksList] = useState([]);
   useEffect(() => {
@@ -22,23 +21,6 @@ function BookData(props) {
     }
   });
 
-=======
-  useEffect(() => {
-    fetchItem();
-  }, []);
-
-  const [books, setBooks] = useState([]);
-
-  const fetchItem = async () => {
-    const data = await fetch(
-      `https://5de759a9b1ad690014a4e21e.mockapi.io/api/v1/books`
-    );
-
-    const booksData = await data.json();
-
-    setBooks(booksData);
-  };
->>>>>>> 4ef112532783233cffdae3089a813c5907d30f37
   // -------------------------*****-------------------------
   // Get book
   function getEachBook(book) {
@@ -112,11 +94,7 @@ function BookData(props) {
       />
 
       <div className="BooksTotalAndButton">
-<<<<<<< HEAD
         <h5 className="totalBooks">Books ({booksList.length})</h5>
-=======
-        <h5 className="totalBooks">Books ({ books.length })</h5>
->>>>>>> 4ef112532783233cffdae3089a813c5907d30f37
 
         <div className="addButton">
           <button className="button-red" onClick={openModal}>

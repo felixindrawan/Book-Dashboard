@@ -19,7 +19,16 @@ function BookDetails(props) {
         </tbody>
       </table>
     );
+<<<<<<< HEAD
 }
+=======
+  }
+
+  function formatDate(string) {
+    var options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(string).toLocaleDateString([], options);
+  }
+>>>>>>> 4ef112532783233cffdae3089a813c5907d30f37
 
   function formatDate(string) {
     var options = { year: "numeric", month: "long", day: "numeric" };

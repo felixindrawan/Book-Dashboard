@@ -14,7 +14,10 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
+<<<<<<< HEAD
     "redux-promise": "^0.6.0",
+=======
+>>>>>>> 4ef112532783233cffdae3089a813c5907d30f37
     "redux-thunk": "^2.3.0"
   },
   "scripts": {

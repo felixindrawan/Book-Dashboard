@@ -1,9 +1,5 @@
 import axios from "axios";
-import {
-  FETCH_PENDING,
-  FETCH_SUCCESS,
-  FETCH_ERROR,
-} from "./types";
+import { FETCH_PENDING, FETCH_SUCCESS, FETCH_ERROR } from "./types";
 
 function fetchPending() {
   return {
@@ -47,7 +43,7 @@ export function fetchData(data) {
       const getCountryAPI = await axios.get(countryAPI);
       const getBooksAPI = await axios.get(booksAPI);
 
-      success = await axios.all([(getCountryAPI), (getBooksAPI)]);
+      success = await axios.all([getCountryAPI, getBooksAPI]);
 
       return onSuccess(success);
     } catch (error) {

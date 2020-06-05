@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/BookDetailsComponent.css";
+import "../../styles/BookDetailsComponent.css";
 
 function BookDetails(props) {
   function createSection(secTitle, secInfo) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Header from "./HeaderComponent";
+import Header from "../Header/HeaderComponent";
 
-import "../styles/AddBookModalComponent.css";
+import "../../styles/AddBookModalComponent.css";
 
 function AddBookModal(props) {
   const [books, setBooks] = useState({

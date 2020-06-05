@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import Header from "./HeaderComponent";
-import BooksData from "./BooksComponent";
+import Header from "../Header/HeaderComponent";
+import BooksData from "../Books/BooksComponent";
 
 import { useSelector, useDispatch } from "react-redux";
-import { fetchData } from "../actions/every_action";
+import { fetchData } from "../../actions/every_action";
 
 function MainComponent() {
-
   // -------------------------*****-------------------------
   // Fetching Data
   const [dataList, setDataList] = useState([]);
@@ -20,13 +19,13 @@ function MainComponent() {
 
   useEffect(() => {
     setDataList(data.data);
-  })
+  });
 
   return (
     <div>
       <Header text="Book Store" />
 
-      <BooksData data={dataList}/>
+      <BooksData data={dataList} />
     </div>
   );
 }

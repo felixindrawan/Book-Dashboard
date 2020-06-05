@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import BookCard from "./BookCardComponent";
-import AddBookModal from "./AddBookModalComponent";
+import BookCard from "../BookCard/BookCardComponent";
+import AddBookModal from "../AddBookModal/AddBookModalComponent";
 
-import "../styles/BookComponent.css";
+import "../../styles/BookComponent.css";
 
 function BookData(props) {
   const [modalVisible, setModalVisible] = useState(false);

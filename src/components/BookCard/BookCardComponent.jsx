@@ -1,8 +1,8 @@
 import React from "react";
 
-import BookDetails from "./BookDetailsComponent";
+import BookDetails from "../BookDetails/BookDetailsComponent";
 
-import "../styles/BookCardComponent.css";
+import "../../styles/BookCardComponent.css";
 
 function BookCard(props) {
   return (

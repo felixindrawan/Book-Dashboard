@@ -8,12 +8,12 @@ function BookDetails(props) {
         <tbody>
           <tr>
             <td>
-              <h5 className="section-title">{secTitle}</h5>
+              <h5 id={secTitle} className="section-title">{secTitle}</h5>
             </td>
           </tr>
           <tr className="info">
             <td>
-              <h5 className="overflow-ellipsis">{secInfo}</h5>
+              <h5 id={secInfo} className="overflow-ellipsis">{secInfo}</h5>
             </td>
           </tr>
         </tbody>

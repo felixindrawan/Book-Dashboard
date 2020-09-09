@@ -1,18 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .BooksTotalAndButton {
-  margin: 2rem 25% auto;
+  margin: 1rem 25% auto;
   height: 2rem;
-  text-align: center;
-}
-
-.totalBooks {
-  vertical-align: middle;
-  float: left;
-}
-
-.addButton {
-  float: right;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button-red {
@@ -24,7 +17,7 @@
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 6px 24px;

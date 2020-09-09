@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 .card-div {
-  margin: 2% 25%;
+  margin: 1rem 25%;
   padding: 2% 2% 2%;
   min-height: 12rem;
   letter-spacing: 0.05em;
+  border-radius: 2rem;
 
   background-color: white;
   font-family: "Roboto", sans-serif;
@@ -34,5 +34,5 @@
 .card-div .author {
   margin: -2% 0 2%;
   display: block;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }

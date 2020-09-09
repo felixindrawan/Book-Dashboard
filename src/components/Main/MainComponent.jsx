@@ -23,7 +23,7 @@ function MainComponent() {
 
   return (
     <div>
-      <Header text="Book Store" />
+      <Header text="Book List" />
 
       <BooksData data={dataList} />
     </div>
